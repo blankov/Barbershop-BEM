@@ -1,6 +1,6 @@
 // VARIABLES & PATHS
 
-const preprocessor = 'sass'; // Preprocessor (sass, scss, less, styl)
+const preprocessor = 'scss'; // Preprocessor (sass, scss, less, styl)
 const fileswatch = 'html,htm,txt,json,md,woff2'; // List of files extensions for watching & hard reload (comma separated)
 const imageswatch = 'jpg,jpeg,png,webp,svg'; // List of images extensions for watching & compression (comma separated)
 const baseDir = 'app'; // Base directory path without «/» at the end
@@ -46,8 +46,6 @@ const {
 /* eslint-disable no-unused-vars */
 const sass = require('gulp-sass');
 const scss = require('gulp-sass');
-const less = require('gulp-less');
-const styl = require('gulp-stylus');
 /* eslint-disable no-unused-vars */
 const cleancss = require('gulp-clean-css');
 const concat = require('gulp-concat');
