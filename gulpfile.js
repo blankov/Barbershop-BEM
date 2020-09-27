@@ -66,7 +66,7 @@ function browsersync() {
       },
       notify:  false,
       online,
-      browser: ['google chrome', 'firefox'],
+      browser: ['google chrome'], // 'firefox'
    });
 }
 
