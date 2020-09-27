@@ -1,0 +1,14 @@
+{
+   "extends": [
+      "stylelint-config-airbnb",
+      "stylelint-config-rational-order",
+      "stylelint-prettier"
+   ],
+   "plugins": [
+      "stylelint-order",
+      "stylelint-scss"
+   ],
+   "rules": {
+      "indentation": 3
+   }
+}

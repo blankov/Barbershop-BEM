@@ -12,51 +12,62 @@ $gutter: $grid-gutter-width;
 
 // IMPORT SECTION
 
-@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
-@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'; // Bootstrap Breakpoints mixin
+@import "node_modules/bootstrap/scss/bootstrap-reboot.scss"; // Bootstrap Reboot collection
+
+@import "node_modules/bootstrap/scss/mixins/_breakpoints.scss"; // Bootstrap Breakpoints mixin
 // @import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
 // @import 'node_modules/bootstrap/scss/utilities/_sizing.scss'; // Optional Bootstrap Utilites
 
 // FONTS LOAD SECTION
 
 @mixin font($fname, $fstyle, $fweight, $furl) {
-	@font-face {
-		font-family: $fname;
-		font-style: $fstyle;
-		font-weight: $fweight;
-		// font-display: swap; // Uncomment to initially display system fonts
-		src: local($fname), url($furl) format('woff2');
-	}
+   @font-face {
+      font-weight: $fweight;
+      font-family: $fname;
+      font-style: $fstyle;
+      // font-display: swap; // Uncomment to initially display system fonts
+      src: local($fname), url($furl) format("woff2");
+   }
 }
 
-@include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2');
-@include font('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2');
-@include font('Roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2');
-@include font('Roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2');
+@include font("Roboto", normal, 400, "../fonts/roboto-regular-webfont.woff2");
+
+@include font("Roboto", italic, 400, "../fonts/roboto-italic-webfont.woff2");
+
+@include font("Roboto", normal, 700, "../fonts/roboto-bold-webfont.woff2");
+
+@include font("Roboto", italic, 700, "../fonts/roboto-bolditalic-webfont.woff2");
 
 // GENERAL DOCUMENT STYLES
 
 ::placeholder {
-	color: #666;
+   color: #666;
 }
 
 ::selection {
-	background-color: $accent;
-	color: #fff;
+   color: #fff;
+   background-color: $accent;
 }
 
-input, textarea {
-	outline: none;
-	&:focus:required:invalid { border-color: red }
-	&:required:valid { border-color: green }
+input,
+textarea {
+   outline: none;
+
+   &:focus:required:invalid {
+      border-color: red;
+   }
+
+   &:required:valid {
+      border-color: green;
+   }
 }
 
 body {
-	font-family: $roboto;
-	font-size: $fontsize;
-	min-width: 320px;
-	position: relative;
-	line-height: 1.65;
-	overflow-x: hidden;
-	color: $textcolor;
+   position: relative;
+   min-width: 320px;
+   overflow-x: hidden;
+   color: $textcolor;
+   font-size: $fontsize;
+   font-family: $roboto;
+   line-height: 1.65;
 }
