@@ -4,7 +4,7 @@ $accent: orange; // Accent Color
 $fontsize: 16px; // Body Font Size
 $textcolor: #333; // Text Color
 $system: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
-$roboto: Roboto, sans-serif; // Roboto Font Family
+$font: "PT Sans Narrow", "Arial", sans-serif; // Roboto Font Family
 
 // Bootstrap compatible gutter variable => $gutter
 $grid-gutter-width: 20px;
@@ -20,23 +20,18 @@ $gutter: $grid-gutter-width;
 
 // FONTS LOAD SECTION
 
-@mixin font($fname, $fstyle, $fweight, $furl) {
-   @font-face {
-      font-weight: $fweight;
-      font-family: $fname;
-      font-style: $fstyle;
-      // font-display: swap; // Uncomment to initially display system fonts
-      src: local($fname), url($furl) format("woff2");
-   }
-}
+// @mixin font($fname, $fstyle, $fweight, $furl) {
+//    @font-face {
+//       font-weight: $fweight;
+//       font-family: $fname;
+//       font-style: $fstyle;
+//       // font-display: swap; // Uncomment to initially display system fonts
+//       src: local($fname), url($furl) format("woff2");
+//    }
+// }
 
-@include font("Roboto", normal, 400, "../fonts/roboto-regular-webfont.woff2");
 
-@include font("Roboto", italic, 400, "../fonts/roboto-italic-webfont.woff2");
 
-@include font("Roboto", normal, 700, "../fonts/roboto-bold-webfont.woff2");
-
-@include font("Roboto", italic, 700, "../fonts/roboto-bolditalic-webfont.woff2");
 
 // GENERAL DOCUMENT STYLES
 
@@ -49,9 +44,18 @@ $gutter: $grid-gutter-width;
    background-color: $accent;
 }
 
+html {
+   box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+   box-sizing: inherit;
+}
+
 input,
 textarea {
-   outline: none;
 
    &:focus:required:invalid {
       border-color: red;
@@ -68,6 +72,10 @@ body {
    overflow-x: hidden;
    color: $textcolor;
    font-size: $fontsize;
-   font-family: $roboto;
-   line-height: 1.65;
+   font-family: $font;
+   line-height: 1.5;
+}
+
+img {
+   min-width: 100%;
 }
