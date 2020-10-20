@@ -9,6 +9,6 @@
       "stylelint-scss"
    ],
    "rules": {
-      "indentation": 3
+      "indentation": "tab"
    }
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SaveActionSettings">
+    <option name="actions">
+      <set>
+        <option value="activate" />
+        <option value="reformat" />
+        <option value="executeAction" />
+      </set>
+    </option>
+    <option name="inclusions">
+      <set>
+        <option value=".*\.html" />
+        <option value=".*\.njk" />
+      </set>
+    </option>
+    <option name="quickLists">
+      <list>
+        <option value="-1179739324" />
+      </list>
+    </option>
+  </component>
+</project>
