@@ -1,51 +1,51 @@
 {
-   "env": {
-      "browser": true,
-      "commonjs": true,
-      "es2021": true
-   },
-   "extends": [
-      "airbnb-base"
-   ],
-   "plugins": [
-      "align-assignments"
-   ],
-   "parserOptions": {
-      "ecmaVersion": 12
-   },
-   "rules": {
-      "indent": [
-         "error",
-         3
-      ],
-      "key-spacing": [
-         "error",
-         {
-            "align": "value"
-         }
-      ],
-      "align-assignments/align-assignments": [
-         2,
-         {
-            "requiresOnly": false
-         }
-      ],
-      "array-bracket-newline": [
-         "error",
-         {
-            "multiline": true,
-            "minItems": 3
-         }
-      ],
-      // "no-multi-spaces": "off"
-      "no-multi-spaces": [
-         "warn",
-         {
-            "exceptions": {
-               "ImportDeclaration": true
-               
-            }
-         }
-      ]
-   }
+	"env": {
+		"browser": true,
+		"commonjs": true,
+		"es2021": true
+	},
+	"extends": [
+		"airbnb-base"
+	],
+	"plugins": [
+		"align-assignments"
+	],
+	"parserOptions": {
+		"ecmaVersion": 2020
+	},
+	"rules": {
+		"indent": [
+			"error",
+			3
+		],
+		"key-spacing": [
+			"error",
+			{
+				"align": "value"
+			}
+		],
+		"align-assignments/align-assignments": [
+			2,
+			{
+				"requiresOnly": false
+			}
+		],
+		"array-bracket-newline": [
+			"error",
+			{
+				"multiline": true,
+				"minItems": 3
+			}
+		],
+		"no-multi-spaces": "off"
+		//      "no-multi-spaces": [
+		//         "warn",
+		//         {
+		//            "exceptions": {
+		//               "ImportDeclaration": true
+		//
+		//            }
+		//         }
+		//      ]
+	}
 }

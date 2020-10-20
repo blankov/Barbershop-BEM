@@ -1,0 +1,44 @@
+{% if not(title) %}
+	{% set title = "HTMLTemplate" %}
+{% endif %}
+
+{% if not(description) %}
+	{% set description = "Startup HTML template based on OptimizedHTML 5" %}
+{% endif %}
+
+{% set og_title = title %}
+{% set og_image = "images/preview.jpg" %}
+{% set og_description = description %}
+{% set og_url = "vk.com" %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+	<head>
+		<meta charset="utf-8">
+		<title>{{ title }}</title>
+		<meta name="description"
+			content="{{ description }}">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" href="images/favicon.png">
+		{% include "blocks/_open-graph.njk" %}
+		<link rel="stylesheet" href="css/app.min.css">
+	</head>
+
+	<body>
+		{#		{% include "blocks/header.njk" %}#}
+
+		{% block content %}
+			<h1>Startup HTML template</h1>
+			<p>
+				Startup HTML5 template, based on
+				<a href="https://github.com/agragregra/OptimizedHTML-5">OptimizedHTML5</a>.
+			</p>
+		{% endblock %}
+
+		{#		{% include "blocks/footer.njk" %}#}
+
+		<script src="js/app.min.js"></script>
+	</body>
+
+</html>

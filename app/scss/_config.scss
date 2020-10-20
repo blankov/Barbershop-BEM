@@ -31,51 +31,52 @@ $gutter: $grid-gutter-width;
 // }
 
 
+// HELPERS CLASSES
+
 
 
 // GENERAL DOCUMENT STYLES
 
 ::placeholder {
-   color: #666;
+	color: #666;
 }
 
 ::selection {
-   color: #fff;
-   background-color: $accent;
+	color: #fff;
+	background-color: $accent;
 }
 
 html {
-   box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-   box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 input,
 textarea {
 
-   &:focus:required:invalid {
-      border-color: red;
-   }
+	&:focus:required:invalid {
+		border-color: red;
+	}
 
-   &:required:valid {
-      border-color: green;
-   }
+	&:required:valid {
+		border-color: green;
+	}
 }
 
 body {
-   position: relative;
-   min-width: 320px;
-   overflow-x: hidden;
-   color: $textcolor;
-   font-size: $fontsize;
-   font-family: $font;
-   line-height: 1.5;
+	position: relative;
+	min-width: 320px;
+	overflow-x: hidden;
+	font-size: $fontsize;
+	font-family: $font;
+	line-height: 1.5;
 }
 
 img {
-   min-width: 100%;
+	min-width: 100%;
 }
