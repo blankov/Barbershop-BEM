@@ -1,6 +1,6 @@
 // VARIABLES & PATHS
 
-const preprocessor = 'scss'; // Preprocessor (sass, scss, less, styl)
+const preprocessor = 'scss'; // Preprocessor name
 const fileswatch   = 'html,htm,txt,json,md,woff2'; // List of files extensions for watching & hard reload (comma separated)
 const imageswatch  = 'jpg,jpeg,png,webp,svg'; // List of images extensions for watching & compression (comma separated)
 const baseDir      = 'app'; // Base directory path without «/» at the end
@@ -53,7 +53,6 @@ const {
    series,
    watch,
 } = require('gulp');
-// const sass = require('gulp-sass');
 const scss         = require('gulp-sass');
 const cleancss     = require('gulp-clean-css');
 const concat       = require('gulp-concat');
@@ -76,7 +75,7 @@ function browsersync() {
       },
       notify:  false,
       online,
-      browser: ['firefox'],   // 'google chrome',
+      browser: ['firefox'], // 'google chrome',
    });
 }
 
