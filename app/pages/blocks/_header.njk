@@ -1,0 +1,32 @@
+<header class="page-header">
+   <a href="" class="page-header__logo">
+      <img src="" alt="" class="page-header__logo-image">
+   </a>
+   <nav class="site-nav">
+      <button class="site-nav__toggle"></button>
+      <div class="site-nav__wrapper">
+         <ul class="site-nav__list site-list">
+            <li class="site-list__item">
+               <a {% if page == "index" %} {% else %} href="/index.html" {% endif %} class="site-list__link">Главная</>
+            </li>
+            <li class="site-list__item">
+               <a {% if page == "portfolio" %} {% else %} href="/portfolio.html" {% endif %} class="site-list__link">Наши работы</a>
+            </li>
+            <li class="site-list__item">
+               <a {% if page == "form" %} {% else %} href="/form.html" {% endif %} class="site-list__link">Записаться</>
+            </li>
+            <li class="site-list__item">
+               <a href="#" class="site-list__link">Контакты</>
+            </li>
+            <li class="site-list__item">
+               <a href="https://github.com/blankov" class="site-list__link">GitHub</>
+            </li>
+         </ul>
+         <ul class="site-nav__list user-list">
+            <li class="user-list__item">
+               <a href="" class="user-list__link">Войти</a>
+            </li>
+         </ul>
+      </div>
+   </nav>
+</header>
