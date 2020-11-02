@@ -1,1 +1,15 @@
 {% extends "layouts/main.njk" %}
+{% set title = "Барбершоп «Бородинский»" %}
+{% set description = "Барбершоп «Бородинский» – истинно мужская стрижка!" %}
+{% set page = "index" %}
+
+{% block main %}
+
+   <h1 class="visually-hidden">Барбершоп «Бородинский» – истинно мужская классика</h1>
+
+   {% include "./blocks/_stats.njk" %}
+   {% include "./blocks/_benefits.njk" %}
+   {% include "./blocks/_news.njk" %}
+   {% include "./blocks/_reviews.njk" %}
+
+{% endblock %}
