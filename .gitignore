@@ -4,3 +4,6 @@
 /**/*.DS_Store
 /**/package-lock.json
 *.sublime-workspace
+/build/
+/.vscode/
+/trash/
