@@ -1,7 +1,8 @@
 // VARIABLES & PATHS
 
 const preprocessor = 'scss'; // Preprocessor name
-const fileswatch   = 'html,htm,txt,json,md,woff2'; // List of files extensions for watching & hard reload (comma separated)
+const fileswatch   = 'html,htm,txt,json,md'; // List of files extensions for watching & hard reload (comma separated)
+const fontswatch   = 'woff, woff2'; // List of
 const imageswatch  = 'jpg,jpeg,png,webp,svg'; // List of images extensions for watching & compression (comma separated)
 const baseDir      = 'app'; // Base directory path without «/» at the end
 const buildDir     = 'build'; // Base directory path without «/» at the end
@@ -30,6 +31,12 @@ const paths = {
    images: {
       src:  `${baseDir}/images/**/*`,
       dest: `${buildDir}/images`,
+   },
+
+   fonts: {
+      src:  [`${baseDir}/fonts/**/*.*`, `!${baseDir}/fonts/src/**/*`],
+      dest: `${buildDir}/fonts`,
+
    },
 
    deploy: {
@@ -128,7 +135,13 @@ function images() {
       .pipe(dest(paths.images.dest));
 }
 
-function cleanimg() {
+function fonts() {
+   return src(paths.fonts.src)
+      .pipe(dest(paths.fonts.dest))
+      .pipe(browserSync.stream());
+}
+
+function cleanImg() {
    return del(`${paths.images.dest}/**/*`, {
       force: true,
    });
@@ -136,6 +149,12 @@ function cleanimg() {
 
 function cleanBuild() {
    return del(`${buildDir}/**/*`, {
+      force: true,
+   });
+}
+
+function cleanFonts() {
+   return del(`${paths.fonts.dest}/**/*`, {
       force: true,
    });
 }
@@ -169,7 +188,7 @@ function startwatch() {
    watch(`${baseDir}/pages/**/*.njk`, {
       usePolling: true,
    }, html);
-   watch(`${baseDir}/**/*.{${fileswatch}}`, {
+   watch([`${baseDir}/**/*.{${fileswatch}}`, `${baseDir}/fonts/*.{${fontswatch}}`], {
       usePolling: true,
    })
       .on('change', browserSync.reload);
@@ -179,13 +198,15 @@ function startwatch() {
 }
 
 exports.browsersync = browsersync;
-exports.assets      = series(cleanimg, styles, scripts, images);
+exports.assets      = series(cleanImg, styles, scripts, images);
 exports.styles      = styles;
 exports.scripts     = scripts;
 exports.images      = images;
-exports.cleanimg    = cleanimg;
+exports.fonts       = fonts;
+exports.cleanImg    = cleanImg;
 exports.cleanBuild  = cleanBuild;
+exports.cleanFonts  = cleanFonts;
 exports.deploy      = deploy;
 exports.ghDeploy    = ghDeploy;
 exports.html        = html;
-exports.default     = parallel(images, html, styles, scripts, browsersync, startwatch);
+exports.default     = parallel(images, html, styles, scripts, fonts, browsersync, startwatch);
