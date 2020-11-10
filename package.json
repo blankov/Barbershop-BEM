@@ -5,13 +5,12 @@
    "main": "index.js",
    "scripts": {
       "start": "gulp",
-      "assets": "gulp assets",
-      "cleanimg": "gulp cleanimg",
+      "cleanImg": "gulp cleanImg",
       "cleanBuild": "gulp cleanBuild",
+      "cleanFonts": "gulp cleanFonts",
       "images": "gulp images",
       "styles": "gulp styles",
       "ghDeploy": "gulp ghDeploy",
-      "html": "gulp html",
       "test": "echo \"Error: no test specified\" && exit 1"
    },
    "author": "blankov",
