@@ -1,30 +1,42 @@
 <header class="page-header">
-   <a href="" class="page-header__logo">
-      <img src="" alt="" class="page-header__logo-image">
+   <a class="page-header__logo" {% if page == "index" %} {% else %} href="/index.html" {% endif %}>
+      <picture class="page-header__logo-picture">
+         <source srcset="../../images/svg/logo-tablet.svg" media="(min-width: 684px) and (max-width: 1004px)">
+         <source srcset="../../images/svg/logo-desktop.svg" media="(min-width: 1004px)">
+         <img class="page-header__logo-image" srcset="../../images/svg/logo-mobile.svg" alt="Логотип Барбершопа «Бородинский»">
+      </picture>
    </a>
-   <nav class="site-nav">
-      <button class="site-nav__toggle"></button>
+   <nav class="site-nav site-nav--closed site-nav--nojs">
+      <button class="site-nav__toggle">Открыть меню</button>
       <div class="site-nav__wrapper">
          <ul class="site-nav__list site-list">
-            <li class="site-list__item">
-               <a {% if page == "index" %} {% else %} href="/index.html" {% endif %} class="site-list__link">Главная</>
+            <li {% if page == "index" %} class="site-list__item site-list__item--active" {% else %} class="site-list__item" {% endif %}>
+               <a class="site-list__link" {% if page == "index" %} {% else %} href="/index.html" {% endif %}>Главная</a>
+            </li>
+            <li {% if page == "portfolio" %} class="site-list__item site-list__item--active" {% else %} class="site-list__item" {% endif %}>
+               <a class="site-list__link" {% if page == "portfolio" %} {% else %} href="/portfolio.html" {% endif %}>Наши работы</a>
+            </li>
+            <li {% if page == "form" %} class="site-list__item site-list__item--active" {% else %} class="site-list__item" {% endif %}>
+               <a class="site-list__link" {% if page == "form" %} {% else %} href="/form.html" {% endif %}>Записаться</a>
             </li>
             <li class="site-list__item">
-               <a {% if page == "portfolio" %} {% else %} href="/portfolio.html" {% endif %} class="site-list__link">Наши работы</a>
+               <a class="site-list__link" href="#">Контакты</a>
             </li>
             <li class="site-list__item">
-               <a {% if page == "form" %} {% else %} href="/form.html" {% endif %} class="site-list__link">Записаться</>
-            </li>
-            <li class="site-list__item">
-               <a href="#" class="site-list__link">Контакты</>
-            </li>
-            <li class="site-list__item">
-               <a href="https://github.com/blankov" class="site-list__link">GitHub</>
+               <a class="site-list__link" href="https://github.com/blankov">GitHub</a>
             </li>
          </ul>
          <ul class="site-nav__list user-list">
             <li class="user-list__item">
-               <a href="" class="user-list__link">Войти</a>
+               <a class="user-list__link" href="">
+                  <svg class="user-list__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" alt="Войти">
+                     <g id="Group_30" data-name="Group 30" transform="translate(-977 -28)">
+                        <path id="Path_75" data-name="Path 75" d="M984.039,28v1.987H991V42.006h-6.958V44h8.953V28Z" transform="translate(0.008 0)" fill="#ffffff"/>
+                        <path id="Path_76" data-name="Path 76" d="M977,35.058V37h7.039v2.993L988,36.056l-3.964-4.045v3.047Z" transform="translate(0 -0.006)" fill="#ffffff"/>
+                     </g>
+                  </svg>
+                  <span class="user-list__text">Войти</span>
+               </a>
             </li>
          </ul>
       </div>
